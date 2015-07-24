@@ -17,11 +17,11 @@ USE chat;
 
 -- ---
 -- Table 'messages'
--- 
+--
 -- ---
 
 DROP TABLE IF EXISTS `messages`;
-    
+
 CREATE TABLE `messages` (
   `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
   `text` VARCHAR(140) NOT NULL,
@@ -33,11 +33,11 @@ CREATE TABLE `messages` (
 
 -- ---
 -- Table 'rooms'
--- 
+--
 -- ---
 
 DROP TABLE IF EXISTS `rooms`;
-    
+
 CREATE TABLE `rooms` (
   `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
   `name` VARCHAR(100) NULL DEFAULT NULL,
@@ -46,11 +46,11 @@ CREATE TABLE `rooms` (
 
 -- ---
 -- Table 'users'
--- 
+--
 -- ---
 
 DROP TABLE IF EXISTS `users`;
-    
+
 CREATE TABLE `users` (
   `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
   `username` VARCHAR(100) NULL DEFAULT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE `users` (
 );
 
 -- ---
--- Foreign Keys 
+-- Foreign Keys
 -- ---
 
 ALTER TABLE `messages` ADD FOREIGN KEY (room_id) REFERENCES `rooms` (`id`);

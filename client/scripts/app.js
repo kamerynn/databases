@@ -1,8 +1,8 @@
 $(document).ready(function(){
   // GLOBAL VARIABLE TO PERSIST FRIENDS
   var friends = [];
-  var parseURL = "https://api.parse.com/1/classes/chatterbox";
-  var localServer = "http://127.0.0.1:3000/classes/chatterbox";
+  // var parseURL = "https://api.parse.com/1/classes/chatterbox";
+  var localServer = "http://127.0.0.1:3000/classes/messages";
 
   /*
     DATABASE INTERACTION FUNCTIONS
