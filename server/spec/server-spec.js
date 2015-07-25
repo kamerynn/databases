@@ -16,11 +16,15 @@ describe("Persistent Node Chat Server", function() {
     });
     dbConnection.connect();
 
-       var tablename = ""; // TODO: fill this out
+       // var tablename = ""; // TODO: fill this out
 
     /* Empty the db table before each test so that multiple tests
      * (or repeated runs of the tests) won't screw each other up: */
-    dbConnection.query("truncate " + tablename, done);
+    dbConnection.query("SET FOREIGN_KEY_CHECKS = 0", done);
+    dbConnection.query("truncate " + 'users', done);
+    dbConnection.query("truncate " + 'messages', done);
+    dbConnection.query("truncate " + 'rooms', done);
+    dbConnection.query("SET FOREIGN_KEY_CHECKS = 1", done);
   });
 
   afterEach(function() {
@@ -38,7 +42,7 @@ describe("Persistent Node Chat Server", function() {
               uri: "http://127.0.0.1:3000/classes/messages",
               json: {
                 username: "Valjean",
-                message: "In mercy's name, three days is all I need.",
+                text: "In mercy's name, three days is all I need.",
                 roomname: "Hello"
               }
       }, function () {
